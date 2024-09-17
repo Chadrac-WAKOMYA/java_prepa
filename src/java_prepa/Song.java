@@ -16,25 +16,25 @@ public class Song {
         Song slow = this; // Pointeur lent
         Song fast = this; // Pointeur rapide
 
-        // // Boucle pour détecter un cycle
-        // while (fast != null && fast.nextSong != null) {
-        // slow = slow.nextSong; // Avance d'un pas
-        // fast = fast.nextSong.nextSong; // Avance de deux pas
+        // Boucle pour détecter un cycle
+        while (fast != null && fast.nextSong != null) {
+            slow = slow.nextSong; // Avance d'un pas
+            fast = fast.nextSong.nextSong; // Avance de deux pas
 
-        // if (slow == fast) { // Cycle détecté
-        // return true;
-        // }
-        // }
-        // return false; // Pas de cycle*
-
-        Song currentSong = this;
-        while (currentSong != null) {
-            currentSong = currentSong.nextSong;
-            if (this == currentSong) {
+            if (slow == fast) { // Cycle détecté
                 return true;
             }
         }
-        return false;
+        return false; // Pas de cycle*
+
+        // Song currentSong = this;
+        // while (currentSong != null) {
+        // currentSong = currentSong.nextSong;
+        // if (this == currentSong) {
+        // return true;
+        // }
+        // }
+        // return false;
 
     }
 
